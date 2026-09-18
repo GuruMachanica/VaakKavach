@@ -44,9 +44,6 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 
-# Firebase Android config (contains API keys)
-/android/app/google-services.json
-
 # Web deployment & node dependencies
 .netlify/
 node_modules/
