@@ -43,7 +43,7 @@ jobs:
           test -f website/css/variables.css || exit 1
           test -f website/js/three_scene.js || exit 1
           test -f website/js/pixi_spectrogram.js || exit 1
-          test -f website/js/phaser_defense.js || exit 1
+          test -f website/js/audio_synth.js || exit 1
           test -f website/js/anime_effects.js || exit 1
           test -f website/js/react_components.js || exit 1
           echo "All dynamic web assets verified."
