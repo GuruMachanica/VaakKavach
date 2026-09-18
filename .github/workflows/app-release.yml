@@ -1,0 +1,89 @@
+name: VaakKavach App Release Build
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Release version tag (e.g. v2.4.0)'
+        required: true
+        default: 'v2.4.0'
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    name: Build Release APK & Publish
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Set up Flutter SDK
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          cache: true
+
+      - name: Verify Flutter Installation
+        run: flutter doctor -v
+
+      - name: Install Dependencies
+        run: flutter pub get
+
+      - name: Run Test Suite
+        run: flutter test
+
+      - name: Build Android Release APK
+        run: flutter build apk --release
+
+      - name: Prepare Release Artifacts
+        id: prepare_apk
+        run: |
+          VERSION="${{ github.ref_name }}"
+          if [ -z "$VERSION" ] || [ "$VERSION" = "main" ]; then
+            VERSION="${{ github.event.inputs.version }}"
+          fi
+          mkdir -p dist
+          cp build/app/outputs/flutter-apk/app-release.apk dist/VaakKavach-${VERSION}.apk
+          echo "apk_path=dist/VaakKavach-${VERSION}.apk" >> $GITHUB_OUTPUT
+          echo "version=${VERSION}" >> $GITHUB_OUTPUT
+
+      - name: Upload APK Build Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: VaakKavach-Release-APK
+          path: ${{ steps.prepare_apk.outputs.apk_path }}
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/') || github.event_name == 'workflow_dispatch'
+        with:
+          tag_name: ${{ steps.prepare_apk.outputs.version }}
+          name: "VaakKavach ${{ steps.prepare_apk.outputs.version }} • Autonomous Edge AI Shield"
+          draft: false
+          prerelease: false
+          files: ${{ steps.prepare_apk.outputs.apk_path }}
+          body: |
+            ### 🛡️ VaakKavach (वाक्कवच) Release ${{ steps.prepare_apk.outputs.version }}
+            
+            **Architect & Lead Engineer**: Mohammad Huzaifa ([@GuruMachanica](https://github.com/GuruMachanica))
+            
+            #### Highlights:
+            - 100% On-Device Edge AI Voice Shield & Deepfake Interceptor
+            - Zero Cloud Telemetry / Zero Login Direct Launch
+            - Autonomous State Machine & Watchdog Self-Healing
+            - Dark Black Noir UI & Stitch MCP Redesign
+            
+            #### Installation:
+            Download and install `VaakKavach-${{ steps.prepare_apk.outputs.version }}.apk` on your Android device (Android 10+).

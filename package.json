@@ -1,0 +1,17 @@
+{
+  "name": "vaakkavach-deployment-suite",
+  "version": "2.4.0",
+  "description": "Deployment and release automation CLI for VaakKavach",
+  "author": "Mohammad Huzaifa <https://github.com/GuruMachanica>",
+  "scripts": {
+    "cli": "node bin/workflow_cli.js",
+    "deploy:website": "npx netlify-cli deploy --dir=website --prod",
+    "deploy:preview": "npx netlify-cli deploy --dir=website",
+    "build:apk": "flutter build apk --release",
+    "test:flutter": "flutter test",
+    "status": "node bin/workflow_cli.js status"
+  },
+  "bin": {
+    "vaakkavach": "./bin/workflow_cli.js"
+  }
+}

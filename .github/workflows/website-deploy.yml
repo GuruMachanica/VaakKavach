@@ -1,0 +1,61 @@
+name: Deploy VaakKavach Website to Netlify
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'website/**'
+      - 'netlify.toml'
+      - '.github/workflows/website-deploy.yml'
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Target environment'
+        required: true
+        default: 'production'
+        type: choice
+        options:
+          - production
+          - preview
+
+jobs:
+  deploy-website:
+    name: Deploy to Netlify
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Verify Website File Boundaries
+        run: |
+          echo "Verifying website static files..."
+          test -f website/index.html || exit 1
+          test -f website/assets/logo.png || exit 1
+          echo "Static assets verified successfully."
+
+      - name: Deploy to Netlify (Production)
+        if: github.event_name == 'push' || github.event.inputs.environment == 'production'
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          if [ -z "$NETLIFY_AUTH_TOKEN" ] || [ -z "$NETLIFY_SITE_ID" ]; then
+            echo "::warning ::Netlify secrets (NETLIFY_AUTH_TOKEN / NETLIFY_SITE_ID) not configured in repo settings. Skipping live upload."
+            echo "To configure: Add NETLIFY_AUTH_TOKEN and NETLIFY_SITE_ID in GitHub Repository Settings -> Secrets."
+          else
+            npx --yes netlify-cli deploy --dir=website --prod --site=$NETLIFY_SITE_ID --auth=$NETLIFY_AUTH_TOKEN
+          fi
+
+      - name: Deploy to Netlify (Preview)
+        if: github.event.inputs.environment == 'preview'
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          npx --yes netlify-cli deploy --dir=website --site=$NETLIFY_SITE_ID --auth=$NETLIFY_AUTH_TOKEN
