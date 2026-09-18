@@ -57,13 +57,27 @@ class DataPrivacySection extends ConsumerWidget {
                 color: bgElevated,
                 borderRadius: BorderRadius.circular(14),
               ),
-              child: Text(
-                'VaakKavach operates strictly on-device in-memory and via local SQLite. No audio, transcripts, or call data ever leave this phone.',
-                style: GoogleFonts.plusJakartaSans(
-                  color: textSecondary,
-                  fontSize: 12,
-                  height: 1.45,
-                ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'VaakKavach operates strictly on-device in-memory and via local SQLite. No audio, transcripts, or call data ever leave this phone.',
+                    style: GoogleFonts.plusJakartaSans(
+                      color: textSecondary,
+                      fontSize: 12,
+                      height: 1.45,
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    'Lead Architect: Mohammad Huzaifa • Upgraded from IronLogic / Ashu-1126/AEGIS.',
+                    style: GoogleFonts.plusJakartaSans(
+                      color: textMuted,
+                      fontSize: 10.5,
+                      fontStyle: FontStyle.italic,
+                    ),
+                  ),
+                ],
               ),
             ),
             const SizedBox(height: 14),
