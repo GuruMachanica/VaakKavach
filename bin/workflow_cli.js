@@ -28,7 +28,7 @@ switch (command) {
       console.error('\x1b[31m✖ Error: website directory missing index.html\x1b[0m');
       process.exit(1);
     }
-    const netlifyArgs = ['--yes', 'netlify-cli', 'deploy', '--dir=website'];
+    const netlifyArgs = ['--yes', 'netlify-cli', 'deploy', '--dir=website', '--no-build', '--site-name=vaakkavach-defense'];
     if (isProd) netlifyArgs.push('--prod');
     run('npx', netlifyArgs);
     console.log('\x1b[32m✔ Website deployment sequence complete.\x1b[0m');

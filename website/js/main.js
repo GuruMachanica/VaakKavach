@@ -22,15 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.warn('Pixi.js initialization notice:', err);
   }
 
-  // 4. Phaser.js Defense Interceptor
-  try {
-    window.phaserDefense = new window.VaakPhaserDefense('phaser-game-container');
-    window.phaserDefense.init();
-  } catch (err) {
-    console.warn('Phaser.js initialization notice:', err);
-  }
-
-  // 5. Anime.js Entrance & Micro-interactions
+  // 4. Anime.js Entrance & Micro-interactions
   try {
     if (window.VaakAnimeEffects) {
       window.VaakAnimeEffects.initStaggerEntrance();

@@ -37,12 +37,12 @@
 
 ---
 
-## 🇮🇳 The Sovereign Cybersecurity Trilogy
+## 🛡️ Core Defense Pillars
 
-VaakKavach represents the acoustic communications shield in the national sovereign defense triumvirate:
-1. **VaakKavach (वाक्कवच)**: Voice & Acoustic Defense — Neutralizes AI voice clones, deepfake audio calls, and phone extortion.
-2. **ArthaRaksha (अर्थरक्षा)**: Financial & Payment Defense — Edge anti-phishing, malicious UPI payload quarantine, and QR inspection.
-3. **AnveshakSutra (अन्वेषकसूत्र)**: Data & Telemetry Defense — Kernel-level forensic tracking, spyware detection, and data leak prevention.
+VaakKavach delivers a comprehensive three-tier acoustic defense architecture:
+1. **Real-Time INT8 Audio DSP**: On-device native signal processing analyzing 44.1 kHz audio streams in under 15ms.
+2. **Autonomous Tactical Threat Engine**: Multi-stage state machine that isolates voice clones, authority coercion, digital arrests, and OTP theft.
+3. **Encrypted Sovereign Forensic Vault**: Tamper-proof SQLite evidence storage recording cryptographic hash signatures entirely offline.
 
 ---
 

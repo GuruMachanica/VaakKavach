@@ -9,13 +9,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Noto+Sans+Devanagari:wght@600;700&family=Space+Grotesk:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/variables.css"><link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/components.css"><link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css"><link rel="stylesheet" href="css/layout.css"><link rel="stylesheet" href="css/threat_lab.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.3.2/pixi.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/3.70.0/phaser.min.js"></script>
 </head>
 <body class="noir-theme">
   <div class="cyber-grid-overlay" aria-hidden="true"></div>
@@ -34,8 +33,8 @@
       <nav class="main-nav" id="navigation-menu">
         <a href="#hero" class="nav-item">Shield</a>
         <a href="#threat-lab" class="nav-item">Threat Lab</a>
-        <a href="#interceptor" class="nav-item">Interceptor</a>
-        <a href="#trilogy" class="nav-item">Trilogy Suite</a>
+        <a href="#architecture" class="nav-item">Architecture</a>
+        <a href="#download" class="nav-item">Download</a>
       </nav>
       <div class="header-actions">
         <div class="telemetry-pill"><span class="status-dot pulsing"></span><span class="telemetry-label font-mono">0.00% ANOMALY</span></div>
@@ -47,16 +46,16 @@
   <main id="main-content">
     <section class="hero-section" id="hero">
       <div class="hero-container">
-        <div class="hero-copy">
-          <div class="cyber-badge"><span class="badge-prefix">◆ PROTOCOL</span><span>AUTONOMOUS ACOUSTIC SHIELD</span></div>
-          <h1 class="hero-title">Neutralize <span class="text-gradient-emerald">AI Voice Clones</span> & Deepfakes in Real Time.</h1>
-          <p class="hero-description"><strong class="text-white">VaakKavach (वाक्कवच)</strong> deploys zero-latency edge neural networks to intercept synthetic audio injection and voice extortion directly on device. 100% offline & serverless.</p>
+        <div class="hero-content">
+          <div class="cyber-badge"><span class="badge-prefix">◆ NOIR 2.0</span><span>SOVEREIGN ACOUSTIC DEFENSE</span></div>
+          <h1 class="hero-title">Acoustic Shield Against <span class="gradient-text">Deepfake Clones</span> & Wiretapping.</h1>
+          <p class="hero-description">Autonomous edge AI neutralizing synthetic voice impersonation, zero-day injection taps, and phone extortion with sub-15ms on-device inference.</p>
           <div class="hero-cta-group">
-            <a href="#download" class="btn btn-primary btn-lg" id="btn-hero-apk">DOWNLOAD APK v2.4<span class="btn-subtext">Android 10+ • ARM64/x86</span></a>
-            <a href="#threat-lab" class="btn btn-ghost btn-lg" id="btn-hero-lab">TEST THREAT LAB<span class="btn-subtext">React + WebAudio</span></a>
+            <a href="#download" class="btn btn-primary btn-lg"><span>DEPLOY SHIELD // APK</span><span class="btn-subtext">v2.4.0 • 100% OFFLINE</span></a>
+            <a href="#threat-lab" class="btn btn-ghost btn-lg"><span>TEST THREAT LAB</span><span class="btn-subtext">SIMULATE EXPLOITS</span></a>
           </div>
-          <div class="hero-specs-row font-mono">
-            <div><span class="text-emerald">11.4ms</span><br><small class="text-dim">LATENCY</small></div>
+          <div class="hero-specs-row">
+            <div><span class="text-emerald">&lt;15ms</span><br><small class="text-dim">LATENCY</small></div>
             <div><span>0 KB</span><br><small class="text-dim">CLOUD</small></div>
             <div><span class="text-titanium">99.4%</span><br><small class="text-dim">ROC-AUC</small></div>
             <div><span class="text-cyan">0 LOGIN</span><br><small class="text-dim">DIRECT</small></div>
@@ -80,41 +79,30 @@
       </div>
     </section>
 
-    <section class="section" id="interceptor">
+    <section class="section" id="architecture">
       <div class="section-container">
         <div class="section-header text-center">
-          <div class="cyber-badge"><span class="badge-prefix">◆ PHASER.JS</span><span>DEFENSE KERNEL</span></div>
-          <h2 class="section-title">Autonomous Packet Interceptor</h2>
-          <p class="section-subtitle">Simulated real-time packet filtering isolating adversarial audio packets before microphone buffers.</p>
-        </div>
-        <div class="canvas-card-wrapper" style="height: 180px;" id="phaser-game-container"></div>
-      </div>
-    </section>
-
-    <section class="section" id="trilogy">
-      <div class="section-container">
-        <div class="section-header text-center">
-          <div class="cyber-badge"><span class="badge-prefix">◆ SUITE</span><span>SOVEREIGN SECURITY TRILOGY</span></div>
-          <h2 class="section-title">The Sovereign Security Triumvirate</h2>
+          <div class="cyber-badge"><span class="badge-prefix">◆ CAPABILITIES</span><span>CORE DEFENSE ARCHITECTURE</span></div>
+          <h2 class="section-title">Tri-Tier Autonomous Defense Engine</h2>
         </div>
         <div class="trilogy-grid">
           <div class="trilogy-card" style="border-color: var(--color-emerald);">
-            <span class="devanagari-inline text-emerald">वाक्कवच</span>
-            <h3 style="font-family: var(--font-display); font-size: 20px; color: #fff; margin: 6px 0;">VaakKavach</h3>
-            <p class="text-dim" style="font-size: 13px; margin-bottom: 14px;">Acoustic AI Defense & Real-time Deepfake Shield. Intercepts synthetic phone calls offline.</p>
-            <span class="btn btn-outline-emerald full-width font-mono" style="font-size: 11px;">ACTIVE PROTOCOL</span>
+            <span class="devanagari-inline text-emerald">संकेत विश्लेषण</span>
+            <h3 style="font-family: var(--font-display); font-size: 20px; color: #fff; margin: 6px 0;">Edge Audio DSP</h3>
+            <p class="text-dim" style="font-size: 13px; margin-bottom: 14px;">Hardware-accelerated INT8 acoustic signal processing. Computes spectral flux & phase jitter in &lt;15ms.</p>
+            <span class="btn btn-outline-emerald full-width font-mono" style="font-size: 11px;">SUB-15MS LOCAL</span>
           </div>
           <div class="trilogy-card">
-            <span class="devanagari-inline text-cyan">अर्थरक्षा</span>
-            <h3 style="font-family: var(--font-display); font-size: 20px; color: #fff; margin: 6px 0;">ArthaRaksha</h3>
-            <p class="text-dim" style="font-size: 13px; margin-bottom: 14px;">Financial Fraud, UPI & Edge Anti-Phishing Platform. Neutralizes malicious QR codes.</p>
-            <span class="btn btn-ghost full-width font-mono" style="font-size: 11px;">COMPANION MESH</span>
+            <span class="devanagari-inline text-cyan">रणनीतिक एजेंट</span>
+            <h3 style="font-family: var(--font-display); font-size: 20px; color: #fff; margin: 6px 0;">Agentic Controller</h3>
+            <p class="text-dim" style="font-size: 13px; margin-bottom: 14px;">Autonomous state machine evaluating deepfakes, authority coercion, digital arrest threats, and OTP extraction.</p>
+            <span class="btn btn-ghost full-width font-mono" style="font-size: 11px;">AUTONOMOUS MATRIX</span>
           </div>
           <div class="trilogy-card">
-            <span class="devanagari-inline text-titanium">अन्वेषकसूत्र</span>
-            <h3 style="font-family: var(--font-display); font-size: 20px; color: #fff; margin: 6px 0;">AnveshakSutra</h3>
-            <p class="text-dim" style="font-size: 13px; margin-bottom: 14px;">Data Theft, Spyware Detection & Autonomous Telemetry Forensic Investigation.</p>
-            <span class="btn btn-ghost full-width font-mono" style="font-size: 11px;">COMPANION MESH</span>
+            <span class="devanagari-inline text-titanium">सुरक्षित खाता</span>
+            <h3 style="font-family: var(--font-display); font-size: 20px; color: #fff; margin: 6px 0;">Forensic Vault</h3>
+            <p class="text-dim" style="font-size: 13px; margin-bottom: 14px;">Encrypted SQLite evidence ledger recording tamper-proof cryptographic audit signatures completely offline.</p>
+            <span class="btn btn-ghost full-width font-mono" style="font-size: 11px;">ZERO-CLOUD VAULT</span>
           </div>
         </div>
       </div>
@@ -135,13 +123,12 @@
   <footer class="site-footer">
     <div class="section-container footer-bottom font-mono">
       <span>© 2026 <a href="https://github.com/GuruMachanica/VaakKavach" target="_blank" style="color:#fff;text-decoration:none;">VaakKavach</a>. Architect: Mohammad Huzaifa. Upgraded from IronLogic / <a href="https://github.com/Ashu-1126/AEGIS" target="_blank" style="color:var(--color-cyan);text-decoration:none;">Ashu-1126/AEGIS</a></span>
-      <span class="text-dim">THREE.JS • PIXI.JS • PHASER.JS • ANIME.JS • REACT 18</span>
+      <span class="text-dim">THREE.JS • PIXI.JS • ANIME.JS • REACT 18 // ON-DEVICE EDGE AI</span>
     </div>
   </footer>
 
   <script src="js/audio_synth.js"></script><script src="js/three_scene.js"></script>
-  <script src="js/pixi_spectrogram.js"></script><script src="js/phaser_defense.js"></script>
-  <script src="js/anime_effects.js"></script><script src="js/react_components.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/pixi_spectrogram.js"></script><script src="js/anime_effects.js"></script>
+  <script src="js/react_components.js"></script><script src="js/main.js"></script>
 </body>
 </html>
