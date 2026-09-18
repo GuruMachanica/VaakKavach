@@ -1,6 +1,6 @@
 {
   "name": "vaakkavach-deployment-suite",
-  "version": "2.4.0",
+  "version": "1.0.0",
   "description": "Deployment and release automation CLI for VaakKavach",
   "author": "Mohammad Huzaifa <https://github.com/GuruMachanica>",
   "scripts": {
