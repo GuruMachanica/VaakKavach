@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../core/colors.dart';
-import '../../models/call_monitor_state.dart';
 import '../../services/audio_watchdog_service.dart';
 
 export 'dual_signal_cards.dart';

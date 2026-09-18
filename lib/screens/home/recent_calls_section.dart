@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:intl/intl.dart';
 import '../../core/colors.dart';
 import '../../models/call_record.dart';
-import '../../models/risk_level.dart';
 import 'recent_call_item.dart';
 
 class RecentCallsSection extends StatelessWidget {

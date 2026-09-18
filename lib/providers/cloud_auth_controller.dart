@@ -1,7 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import '../services/backend_service.dart';
-import 'auth_provider.dart';
 
 class CloudAuthController {
   final Ref ref;

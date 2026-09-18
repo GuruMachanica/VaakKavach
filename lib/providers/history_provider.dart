@@ -99,7 +99,9 @@ class HistoryNotifier extends Notifier<HistoryState> {
     await ref.read(authProvider.notifier).ensureSessionValid();
     final auth = ref.read(authProvider);
     if (auth.accessToken.isEmpty ||
-        auth.accessToken == 'LOCAL_EDGE_OFFLINE_TOKEN') return;
+        auth.accessToken == 'LOCAL_EDGE_OFFLINE_TOKEN') {
+      return;
+    }
     try {
       await ref
           .read(backendServiceProvider)

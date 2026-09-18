@@ -2,7 +2,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../services/backend_service.dart';
 import '../services/local_database_service.dart';
 import 'auth_provider.dart';
-import 'profile_provider.dart';
 
 class ProfileSecurityHelper {
   final Ref ref;

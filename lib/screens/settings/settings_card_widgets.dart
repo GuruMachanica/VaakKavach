@@ -58,7 +58,7 @@ class SettingsSectionCard extends StatelessWidget {
                   ],
                 ),
               ),
-              if (headerAction != null) headerAction!,
+              ?headerAction,
             ],
           ),
           const SizedBox(height: 16),

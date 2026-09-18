@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../models/auth_state.dart';
 import '../services/backend_service.dart';
-import '../services/local_database_service.dart';
 import 'cloud_auth_controller.dart';
 
 export '../models/auth_state.dart';
