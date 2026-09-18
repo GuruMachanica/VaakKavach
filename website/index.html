@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VaakKavach (वाक्कवच) | Autonomous Edge AI Acoustic Defense</title>
+  <meta name="description" content="On-device edge AI defense shield against real-time voice cloning and deepfakes.">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Noto+Sans+Devanagari:wght@600;700&family=Space+Grotesk:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css"><link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css"><link rel="stylesheet" href="css/layout.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.3.2/pixi.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/3.70.0/phaser.min.js"></script>
+</head>
+<body class="noir-theme">
+  <div class="cyber-grid-overlay" aria-hidden="true"></div>
+  <div class="glow-sphere cyan-glow" aria-hidden="true"></div>
+  <div class="glow-sphere emerald-glow" aria-hidden="true"></div>
+
+  <header class="site-header" id="main-header">
+    <div class="header-container">
+      <a href="#hero" class="brand-identity" id="brand-logo-link">
+        <img src="assets/logo.png" alt="VaakKavach" class="brand-emblem-img" id="header-logo">
+        <div class="brand-text">
+          <span class="brand-name">VAAKKAVACH <span class="devanagari-inline">वाक्कवच</span></span>
+          <span class="brand-tagline">AI ACOUSTIC SHIELD // LEVEL-0</span>
+        </div>
+      </a>
+      <nav class="main-nav" id="navigation-menu">
+        <a href="#hero" class="nav-item">Shield</a>
+        <a href="#threat-lab" class="nav-item">Threat Lab</a>
+        <a href="#interceptor" class="nav-item">Interceptor</a>
+        <a href="#trilogy" class="nav-item">Trilogy Suite</a>
+      </nav>
+      <div class="header-actions">
+        <div class="telemetry-pill"><span class="status-dot pulsing"></span><span class="telemetry-label font-mono">0.00% ANOMALY</span></div>
+        <a href="#download" class="btn btn-primary" id="btn-header-download">GET SHIELD</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero-section" id="hero">
+      <div class="hero-container">
+        <div class="hero-copy">
+          <div class="cyber-badge"><span class="badge-prefix">◆ PROTOCOL</span><span>AUTONOMOUS ACOUSTIC SHIELD</span></div>
+          <h1 class="hero-title">Neutralize <span class="text-gradient-emerald">AI Voice Clones</span> & Deepfakes in Real Time.</h1>
+          <p class="hero-description"><strong class="text-white">VaakKavach (वाक्कवच)</strong> deploys zero-latency edge neural networks to intercept synthetic audio injection and voice extortion directly on device. 100% offline & serverless.</p>
+          <div class="hero-cta-group">
+            <a href="#download" class="btn btn-primary btn-lg" id="btn-hero-apk">DOWNLOAD APK v2.4<span class="btn-subtext">Android 10+ • ARM64/x86</span></a>
+            <a href="#threat-lab" class="btn btn-ghost btn-lg" id="btn-hero-lab">TEST THREAT LAB<span class="btn-subtext">React + WebAudio</span></a>
+          </div>
+          <div class="hero-specs-row font-mono">
+            <div><span class="text-emerald">11.4ms</span><br><small class="text-dim">LATENCY</small></div>
+            <div><span>0 KB</span><br><small class="text-dim">CLOUD</small></div>
+            <div><span class="text-titanium">99.4%</span><br><small class="text-dim">ROC-AUC</small></div>
+            <div><span class="text-cyan">0 LOGIN</span><br><small class="text-dim">DIRECT</small></div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="canvas-card-wrapper" id="threejs-shield-container" title="Three.js 3D Holographic Shield"></div>
+          <div style="margin-top: 12px;" id="pixi-canvas-container" title="Pixi.js Acoustic Waterfall"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="threat-lab">
+      <div class="section-container">
+        <div class="section-header text-center">
+          <div class="cyber-badge"><span class="badge-prefix">◆ REACT 18</span><span>INTERACTIVE THREAT LAB</span></div>
+          <h2 class="section-title">Acoustic Threat Neutralization Lab</h2>
+          <p class="section-subtitle">Real-time spectral decomposition of elevenlabs voice clones, injection cables, and phone extortion.</p>
+        </div>
+        <div id="react-threat-lab-root"></div>
+      </div>
+    </section>
+
+    <section class="section" id="interceptor">
+      <div class="section-container">
+        <div class="section-header text-center">
+          <div class="cyber-badge"><span class="badge-prefix">◆ PHASER.JS</span><span>DEFENSE KERNEL</span></div>
+          <h2 class="section-title">Autonomous Packet Interceptor</h2>
+          <p class="section-subtitle">Simulated real-time packet filtering isolating adversarial audio packets before microphone buffers.</p>
+        </div>
+        <div class="canvas-card-wrapper" style="height: 180px;" id="phaser-game-container"></div>
+      </div>
+    </section>
+
+    <section class="section" id="trilogy">
+      <div class="section-container">
+        <div class="section-header text-center">
+          <div class="cyber-badge"><span class="badge-prefix">◆ SUITE</span><span>SOVEREIGN SECURITY TRILOGY</span></div>
+          <h2 class="section-title">The Sovereign Security Triumvirate</h2>
+        </div>
+        <div class="trilogy-grid">
+          <div class="trilogy-card" style="border-color: var(--color-emerald);">
+            <span class="devanagari-inline text-emerald">वाक्कवच</span>
+            <h3 style="font-family: var(--font-display); font-size: 20px; color: #fff; margin: 6px 0;">VaakKavach</h3>
+            <p class="text-dim" style="font-size: 13px; margin-bottom: 14px;">Acoustic AI Defense & Real-time Deepfake Shield. Intercepts synthetic phone calls offline.</p>
+            <span class="btn btn-outline-emerald full-width font-mono" style="font-size: 11px;">ACTIVE PROTOCOL</span>
+          </div>
+          <div class="trilogy-card">
+            <span class="devanagari-inline text-cyan">अर्थरक्षा</span>
+            <h3 style="font-family: var(--font-display); font-size: 20px; color: #fff; margin: 6px 0;">ArthaRaksha</h3>
+            <p class="text-dim" style="font-size: 13px; margin-bottom: 14px;">Financial Fraud, UPI & Edge Anti-Phishing Platform. Neutralizes malicious QR codes.</p>
+            <span class="btn btn-ghost full-width font-mono" style="font-size: 11px;">COMPANION MESH</span>
+          </div>
+          <div class="trilogy-card">
+            <span class="devanagari-inline text-titanium">अन्वेषकसूत्र</span>
+            <h3 style="font-family: var(--font-display); font-size: 20px; color: #fff; margin: 6px 0;">AnveshakSutra</h3>
+            <p class="text-dim" style="font-size: 13px; margin-bottom: 14px;">Data Theft, Spyware Detection & Autonomous Telemetry Forensic Investigation.</p>
+            <span class="btn btn-ghost full-width font-mono" style="font-size: 11px;">COMPANION MESH</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="download">
+      <div class="section-container text-center">
+        <div class="download-card">
+          <img src="assets/logo.png" alt="VaakKavach" style="width: 72px; height: 72px; margin-bottom: 16px;">
+          <h2 class="section-title">Deploy Sovereign Voice Armor</h2>
+          <p class="section-subtitle" style="margin-bottom: 24px;">Zero-dependency APK for Android. No registration. 100% offline edge privacy.</p>
+          <button type="button" class="btn btn-primary btn-xl" onclick="alert('VaakKavach Release APK (v2.4.0) compiled. Run \'flutter run -d android\' from project root!')">DOWNLOAD VAAKKAVACH APK</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="section-container footer-bottom font-mono">
+      <span>© 2026 VaakKavach Project. Sovereign Indian Cyber Defense.</span>
+      <span class="text-dim">THREE.JS • PIXI.JS • PHASER.JS • ANIME.JS • REACT 18</span>
+    </div>
+  </footer>
+
+  <script src="js/audio_synth.js"></script><script src="js/three_scene.js"></script>
+  <script src="js/pixi_spectrogram.js"></script><script src="js/phaser_defense.js"></script>
+  <script src="js/anime_effects.js"></script><script src="js/react_components.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

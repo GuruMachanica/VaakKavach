@@ -44,6 +44,8 @@ class AegisNativeAudioEngine : MethodChannel.MethodCallHandler, EventChannel.Str
     private var latestSyntheticScore: Double = 0.0
     @Volatile
     private var latestDb: Double = -60.0
+    @Volatile
+    private var lastChunkTime: Long = System.currentTimeMillis()
 
     override fun onMethodCall(call: MethodCall, result: MethodChannel.Result) {
         when (call.method) {
@@ -56,6 +58,17 @@ class AegisNativeAudioEngine : MethodChannel.MethodCallHandler, EventChannel.Str
             "stopAudioRecording" -> {
                 stopRecording()
                 result.success(true)
+            }
+            "rebootEngine" -> {
+                stopRecording()
+                val rate = call.argument<Int>("sampleRate") ?: sampleRate
+                val success = startRecording(rate)
+                result.success(success)
+            }
+            "isHealthy" -> {
+                val now = System.currentTimeMillis()
+                val healthy = isRecording && (now - lastChunkTime < 2500)
+                result.success(healthy)
             }
             "getAudioMetrics" -> {
                 val metrics = mapOf(
@@ -197,6 +210,7 @@ class AegisNativeAudioEngine : MethodChannel.MethodCallHandler, EventChannel.Str
             latestIsSpeech = isSpeech
             latestSyntheticScore = syntheticScore
             latestDb = db
+            lastChunkTime = System.currentTimeMillis()
 
             // Stream telemetry payload to Flutter EventChannel on Main Looper
             val sink = eventSink

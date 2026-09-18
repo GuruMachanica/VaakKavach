@@ -1,0 +1,103 @@
+/* VaakKavach - Base & Typography Styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body.noir-theme {
+  background-color: var(--bg-pitch);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.cyber-grid-overlay {
+  position: fixed;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.glow-sphere {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.15;
+}
+
+.cyan-glow {
+  width: 500px;
+  height: 500px;
+  background: var(--color-cyan);
+  top: -100px;
+  right: -100px;
+}
+
+.emerald-glow {
+  width: 450px;
+  height: 450px;
+  background: var(--color-emerald);
+  bottom: 10%;
+  left: -150px;
+}
+
+.font-mono { font-family: var(--font-mono); }
+.text-emerald { color: var(--color-emerald); }
+.text-crimson { color: var(--color-crimson); }
+.text-cyan { color: var(--color-cyan); }
+.text-titanium { color: var(--text-primary); }
+.text-dim { color: var(--text-muted); }
+.text-white { color: #ffffff; }
+.text-center { text-align: center; }
+.hidden { display: none !important; }
+
+.text-gradient-emerald {
+  background: linear-gradient(135deg, #34d399 0%, #10b981 60%, #059669 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.devanagari-inline {
+  font-family: var(--font-sanskrit);
+  font-weight: 600;
+  opacity: 0.85;
+  margin-left: 4px;
+}
+
+.cyber-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-titanium);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-cyan);
+  margin-bottom: 20px;
+}
+
+.badge-prefix {
+  color: var(--color-emerald);
+  font-weight: bold;
+}

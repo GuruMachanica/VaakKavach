@@ -28,7 +28,7 @@ class AegisApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: 'A.E.G.I.S.',
+      title: 'VaakKavach',
       debugShowCheckedModeBanner: false,
       theme: buildAegisTheme(),
       routerConfig: appRouter,
