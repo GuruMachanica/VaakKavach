@@ -1,14 +1,14 @@
-/* VaakKavach - Threat Lab Console Styles */
+/* VaakKavach - Threat Lab Organic & Curved Console Styles */
 .threat-lab-console {
   display: grid;
-  grid-template-columns: 340px 1fr;
-  gap: 24px;
-  background: var(--bg-card);
-  border: 1px solid var(--border-titanium);
-  border-radius: 8px;
-  padding: 24px;
-  backdrop-filter: blur(20px);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+  grid-template-columns: 350px 1fr;
+  gap: 28px;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.6) 0%, rgba(3, 7, 18, 0.8) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 28px;
+  padding: 28px;
+  backdrop-filter: blur(24px);
+  box-shadow: 0 24px 50px -15px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 .sidebar-heading {
   font-family: var(--font-mono);
@@ -20,10 +20,10 @@
 }
 .scenario-list { display: flex; flex-direction: column; gap: 10px; }
 .scenario-card {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid var(--border-subtle);
-  border-radius: 6px;
-  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  padding: 13px 16px;
   text-align: left;
   display: flex;
   align-items: center;
@@ -34,40 +34,40 @@
   color: inherit;
 }
 .scenario-card:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: var(--border-titanium);
-  transform: translateX(2px);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.18);
+  transform: translateY(-2px);
 }
 .scenario-card.active {
-  background: rgba(16, 185, 129, 0.06);
+  background: rgba(16, 185, 129, 0.08);
   border-color: var(--color-emerald);
-  box-shadow: 0 0 16px rgba(16, 185, 129, 0.15);
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.18), inset 0 1px 0 rgba(16, 185, 129, 0.3);
 }
 .scenario-status-indicator { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-.indicator-emerald { background: var(--color-emerald); box-shadow: 0 0 8px var(--color-emerald); }
-.indicator-crimson { background: var(--color-crimson); box-shadow: 0 0 8px var(--color-crimson); }
+.indicator-emerald { background: var(--color-emerald); box-shadow: 0 0 10px var(--color-emerald); }
+.indicator-crimson { background: var(--color-crimson); box-shadow: 0 0 10px var(--color-crimson); }
 .scenario-info { flex: 1; min-width: 0; }
-.scenario-name { font-family: var(--font-display); font-size: 13px; font-weight: 600; color: #ffffff; margin-bottom: 2px; }
+.scenario-name { font-family: var(--font-display); font-size: 13.5px; font-weight: 600; color: #ffffff; margin-bottom: 2px; }
 .scenario-desc { font-size: 11px; color: var(--text-dim); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.scenario-badge { font-family: var(--font-mono); font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 4px; letter-spacing: 0.06em; flex-shrink: 0; }
-.scenario-badge.safe { background: rgba(16, 185, 129, 0.15); color: var(--color-emerald); border: 1px solid rgba(16, 185, 129, 0.3); }
-.scenario-badge.threat { background: rgba(239, 68, 68, 0.15); color: var(--color-crimson); border: 1px solid rgba(239, 68, 68, 0.3); }
+.scenario-badge { font-family: var(--font-mono); font-size: 10px; font-weight: 700; padding: 4px 10px; border-radius: 9999px; letter-spacing: 0.06em; flex-shrink: 0; }
+.scenario-badge.safe { background: rgba(16, 185, 129, 0.15); color: var(--color-emerald); border: 1px solid rgba(16, 185, 129, 0.35); }
+.scenario-badge.threat { background: rgba(239, 68, 68, 0.15); color: var(--color-crimson); border: 1px solid rgba(239, 68, 68, 0.35); }
 
 .console-main { display: flex; flex-direction: column; gap: 16px; }
 .telemetry-banner {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid var(--border-subtle);
-  border-radius: 6px;
-  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 18px 24px;
   transition: all var(--transition-fast);
 }
 .telemetry-banner.threat-active {
   background: rgba(239, 68, 68, 0.06);
-  border-color: rgba(239, 68, 68, 0.3);
-  box-shadow: inset 0 0 20px rgba(239, 68, 68, 0.05);
+  border-color: rgba(239, 68, 68, 0.35);
+  box-shadow: inset 0 0 24px rgba(239, 68, 68, 0.08);
 }
 .banner-status-tag { display: block; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; color: var(--color-emerald); margin-bottom: 4px; }
 .threat-active .banner-status-tag { color: var(--color-crimson); }
@@ -80,25 +80,29 @@
 .btn-audio-play {
   flex: 1;
   background: rgba(56, 189, 248, 0.08);
-  border: 1px solid rgba(56, 189, 248, 0.3);
+  border: 1px solid rgba(56, 189, 248, 0.35);
   color: var(--color-cyan);
+  border-radius: 9999px;
+  padding: 12px 24px;
 }
-.btn-audio-play:hover { background: rgba(56, 189, 248, 0.16); border-color: var(--color-cyan); box-shadow: 0 0 16px rgba(56, 189, 248, 0.2); }
+.btn-audio-play:hover { background: rgba(56, 189, 248, 0.16); border-color: var(--color-cyan); box-shadow: 0 0 16px rgba(56, 189, 248, 0.25); transform: translateY(-2px); }
 .btn-neutralize {
   flex: 1;
   background: rgba(239, 68, 68, 0.08);
-  border: 1px solid rgba(239, 68, 68, 0.3);
+  border: 1px solid rgba(239, 68, 68, 0.35);
   color: var(--color-crimson);
+  border-radius: 9999px;
+  padding: 12px 24px;
 }
-.btn-neutralize:hover:not(:disabled) { background: var(--color-crimson); color: #000000; box-shadow: 0 0 16px rgba(239, 68, 68, 0.4); }
-.btn-neutralize:disabled { opacity: 0.4; cursor: not-allowed; border-color: var(--border-subtle); color: var(--text-muted); background: transparent; }
+.btn-neutralize:hover:not(:disabled) { background: var(--color-crimson); color: #000000; box-shadow: 0 0 20px rgba(239, 68, 68, 0.45); transform: translateY(-2px); }
+.btn-neutralize:disabled { opacity: 0.4; cursor: not-allowed; border-color: rgba(255, 255, 255, 0.06); color: var(--text-muted); background: transparent; }
 
 .forensics-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 .forensic-cell {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid var(--border-subtle);
-  border-radius: 6px;
-  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 18px;
+  padding: 14px 18px;
   display: flex;
   flex-direction: column;
   gap: 8px;
